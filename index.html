@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard PRO - Running</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+
+    <h1>🏃 Dashboard PRO de Entrenamiento</h1>
+
+    <section id="summary">
+        <h2>📊 Resumen del día</h2>
+        <div id="analysis"></div>
+    </section>
+
+    <section id="charts">
+        <h2>📈 Gráficos</h2>
+        <canvas id="paceChart"></canvas>
+        <canvas id="distanceChart"></canvas>
+        <canvas id="fatigueChart"></canvas>
+    </section>
+
+    <section id="map">
+        <h2>🗺️ Mapa de rutas</h2>
+        <div id="mapid"></div>
+    </section>
+
+    <section id="history">
+        <h2>📚 Histórico de planes</h2>
+        <div id="historyList"></div>
+    </section>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
