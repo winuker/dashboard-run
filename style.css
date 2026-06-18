@@ -1,0 +1,23 @@
+body {
+    background: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #00e676;
+}
+
+#mapid {
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+canvas {
+    margin: 30px 0;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
