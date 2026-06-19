@@ -82,4 +82,18 @@ function renderMap(activities) {
   }).addTo(map);
 }
 
+function predictHalfMarathon(activities) {
+  // Basado en tus últimos 30 días
+  const lastRuns = activities.slice(-6); // últimas 6 sesiones
+  const avgPace = lastRuns.reduce((acc, a) => acc + a.pace_min_km, 0) / lastRuns.length;
+
+  // Fórmula simple: ritmo * 21.097 km
+  const predictedMinutes = avgPace * 21.097;
+
+  const hours = Math.floor(predictedMinutes / 60);
+  const minutes = Math.round(predictedMinutes % 60);
+
+  return `${hours}h ${minutes}min`;
+}
+
 loadData();
