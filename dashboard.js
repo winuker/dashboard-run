@@ -159,13 +159,7 @@ function renderAI(text) {
   document.getElementById("aiText").textContent = text;
 }
 
-function renderMap() {
-  const map = L.map("map").setView([37.88, -4.77], 12); // Córdoba
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18
-  }).addTo(map);
-}
 
 // Predicción Media Maratón
 function predictHalfMarathon(activities) {
