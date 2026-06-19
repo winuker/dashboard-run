@@ -26,7 +26,7 @@ async function loadData() {
     message.textContent = "Twilio solo permite 50 mensajes al día en el Sandbox.";
   }
   else if (data.whatsapp_status === "disabled") {
-    card.classList.add("visible");
+    card.classList.add("disabled", "visible");
     title.textContent = "WhatsApp desactivado";
     message.textContent = "Has refrescado sin enviar WhatsApp.";
   }
