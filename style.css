@@ -1,19 +1,19 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #0d1117;
-  color: #e6edf3;
+  background: #f5f7fa;
+  color: #1a1a1a;
 }
 
 header {
   text-align: center;
   padding: 30px 10px;
-  background: #161b22;
-  border-bottom: 1px solid #30363d;
+  background: #ffffff;
+  border-bottom: 1px solid #d0d7de;
 }
 
 .subtitle {
-  color: #8b949e;
+  color: #555;
 }
 
 .card-grid {
@@ -24,30 +24,52 @@ header {
 }
 
 .card {
-  background: #161b22;
+  background: #ffffff;
   padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #30363d;
+  border-radius: 12px;
+  border: 1px solid #e1e4e8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .chart-card {
-  background: #161b22;
+  background: #ffffff;
   padding: 20px;
   margin: 20px;
-  border-radius: 10px;
-  border: 1px solid #30363d;
+  border-radius: 12px;
+  border: 1px solid #e1e4e8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 #map {
   height: 400px;
   margin: 20px;
-  border-radius: 10px;
-  border: 1px solid #30363d;
+  border-radius: 12px;
+  border: 1px solid #e1e4e8;
 }
 
 .analysis pre {
   white-space: pre-wrap;
-  font-size: 14px;
-  color: #c9d1d9;
+  font-size: 15px;
+  color: #333;
+}
+
+/* MODO MÓVIL */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .chart-card {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  #map {
+    height: 300px;
+  }
+
+  .analysis pre {
+    font-size: 14px;
+  }
 }
 
