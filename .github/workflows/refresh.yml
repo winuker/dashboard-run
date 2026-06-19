@@ -33,12 +33,14 @@ jobs:
         run: |
           python plan_entreno_gpt5_v2.py
 
-      - name: Commit y push del JSON actualizado
+            - name: Commit y push del JSON actualizado
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add dashboard_data.json
-          git commit -m "Actualización automática"
-          git push https://x-access-token:${GH_TOKEN}@github.com/winuker/dashboard-run.git
+          git commit -m "Actualización automática" || echo "No hay cambios para commitear"
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/winuker/dashboard-run.git
+          git push origin HEAD:main
+
