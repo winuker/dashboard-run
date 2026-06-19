@@ -309,24 +309,7 @@ def main():
     print("Generando plan IA...")
 
     prompt = build_prompt(activities, summary)
-
     plan = get_plan(prompt)
-
-    # ======================================
-    # GUARDAR JSON PARA EL DASHBOARD
-    # ======================================
-
-    dashboard_data = {
-        "activities": activities,
-        "summary": summary,
-        "plan": plan,
-        "generated_at": datetime.now().isoformat()
-    }
-
-    with open("dashboard_data.json", "w", encoding="utf-8") as f:
-        json.dump(dashboard_data, f, ensure_ascii=False, indent=2)
-
-    
 
     # ======================================
     # ENVIAR WHATSAPP
@@ -335,18 +318,25 @@ def main():
     print(plan)
     print("Enviando WhatsApp...")
 
-    send_whatsapp(plan)
+    whatsapp_status = send_whatsapp(plan)
+    print("Estado WhatsApp:", whatsapp_status)
 
-    # Enviar link del dashboard
-    twilio_client.messages.create(
-        body="📊 Dashboard actualizado:\nhttps://winuker.github.io/dashboard-run",
-        from_=WHATSAPP_FROM,
-        to=WHATSAPP_TO
-    )
+    # ======================================
+    # GUARDAR JSON PARA EL DASHBOARD
+    # ======================================
 
+    dashboard_data = {
+    "activities": activities,
+    "summary": summary,
+    "plan": plan,
+    "generated_at": datetime.now().isoformat(),
+    "whatsapp_status": whatsapp_status
+    }
+
+    with open("dashboard_data.json", "w", encoding="utf-8") as f:
+        json.dump(dashboard_data, f, ensure_ascii=False, indent=2)
+   
     print("✔ Listo")
-
-
 
 if __name__ == "__main__":
     main()
