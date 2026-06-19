@@ -235,16 +235,25 @@ Justifica cada recomendación.
 # ======================================
 
 def send_whatsapp(text):
-    max_len = 1500
+    from twilio.base.exceptions import TwilioRestException
 
-    parts = [text[i:i+max_len] for i in range(0, len(text), max_len)]
-
-    for i, part in enumerate(parts, 1):
+    try:
         twilio_client.messages.create(
-            body=f"Parte {i}\n\n{part}",
-            from_=WHATSAPP_FROM,
-            to=WHATSAPP_TO
+            from_=os.getenv("WHATSAPP_FROM"),
+            body=text,
+            to=os.getenv("WHATSAPP_TO")
         )
+        return "sent"
+
+    except TwilioRestException as e:
+        if "429" in str(e):
+            return "limit_reached"
+        else:
+            return "error"
+
+    except Exception:
+        return "error"
+
 # ======================================
 # SUBIR JSON A GITHUB
 # ======================================
