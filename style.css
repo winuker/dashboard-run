@@ -1,3 +1,5 @@
+/* === BASE GENERAL === */
+
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -15,6 +17,8 @@ header {
 .subtitle {
   color: #555;
 }
+
+/* === TARJETAS GENERALES === */
 
 .card-grid {
   display: grid;
@@ -50,7 +54,8 @@ header {
   color: #333;
 }
 
-/* MODO MÓVIL */
+/* === MODO MÓVIL === */
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 22px;
@@ -72,6 +77,9 @@ header {
   font-size: 12px;
   color: #666;
 }
+
+/* === BOTÓN REFRESH === */
+
 .refresh-container {
   text-align: center;
   margin: 20px;
@@ -104,36 +112,26 @@ header {
 .hidden {
   display: none;
 }
-.status-card {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    background: #1e1e1e;
-    color: #fff;
-    border-left: 5px solid #4caf50;
-}
 
-.status-card.warning {
-    border-left-color: #ff9800;
-}
+/* ========================================================= */
+/* === TARJETA WHATSAPP – ESTILO APPLE FITNESS (NUEVO) ==== */
+/* ========================================================= */
 
-.status-card.error {
-    border-left-color: #f44336;
-}
 .whatsapp-card {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 18px 22px;
-    border-radius: 12px;
-    background: #1c1c1c;
-    border: 1px solid #333;
-    margin-top: 25px;
+    gap: 16px;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e5e5e7;
+    margin: 25px auto;
+    max-width: 420px;
+    width: 92%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     opacity: 0;
     transform: translateY(10px);
-    transition: all 0.4s ease;
+    transition: all 0.35s ease;
 }
 
 .whatsapp-card.visible {
@@ -141,37 +139,31 @@ header {
     transform: translateY(0);
 }
 
-.whatsapp-card .whatsapp-icon {
+.whatsapp-icon {
     font-size: 2.2rem;
 }
 
 .whatsapp-card.success {
-    border-left: 6px solid #4caf50;
+    border-left: 6px solid #34c759; /* Apple green */
 }
 
 .whatsapp-card.warning {
-    border-left: 6px solid #ff9800;
+    border-left: 6px solid #ffcc00; /* Apple yellow */
 }
 
 .whatsapp-card.error {
-    border-left: 6px solid #f44336;
+    border-left: 6px solid #ff3b30; /* Apple red */
 }
 
 .whatsapp-card h3 {
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 600;
+    color: #1c1c1e; /* Apple dark text */
 }
 
 .whatsapp-card p {
-    margin: 3px 0 0;
-    font-size: 1rem;
-    opacity: 0.85;
+    margin: 4px 0 0;
+    font-size: 0.95rem;
+    color: #3a3a3c; /* Apple secondary text */
 }
-
-.hidden {
-    display: none;
-}
-
-
-
