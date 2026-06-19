@@ -1,4 +1,7 @@
 import os
+
+SEND_WHATSAPP = os.getenv("SEND_WHATSAPP", "false") == "true"
+
 import json
 import requests
 from datetime import datetime
@@ -312,14 +315,19 @@ def main():
     plan = get_plan(prompt)
 
     # ======================================
-    # ENVIAR WHATSAPP
+    # ENVIAR WHATSAPP (solo si está activado)
     # ======================================
 
     print(plan)
-    print("Enviando WhatsApp...")
 
-    whatsapp_status = send_whatsapp(plan)
-    print("Estado WhatsApp:", whatsapp_status)
+    if SEND_WHATSAPP:
+        print("Enviando WhatsApp...")
+        whatsapp_status = send_whatsapp(plan)
+        print("Estado WhatsApp:", whatsapp_status)
+    else:
+        print("WhatsApp desactivado para esta ejecución.")
+        whatsapp_status = "disabled"
+
 
     # ======================================
     # GUARDAR JSON PARA EL DASHBOARD
