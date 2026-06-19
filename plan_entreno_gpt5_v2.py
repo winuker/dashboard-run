@@ -2,6 +2,7 @@ import os
 import json
 import requests
 from datetime import datetime
+from pathlib import Path
 from openai import OpenAI
 from twilio.rest import Client as TwilioClient
 from auto_refresh import ensure_valid_token
@@ -28,6 +29,40 @@ WHATSAPP_TO = os.environ["WHATSAPP_TO"]
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 twilio_client = TwilioClient(TWILIO_SID, TWILIO_TOKEN)
+
+# ======================================
+# SISTEMA DE LOGS
+# ======================================
+
+def write_log(message):
+    Path("logs").mkdir(exist_ok=True)
+    log_file = f"logs/{datetime.now().strftime('%Y-%m-%d')}.log"
+    timestamp = datetime.now().strftime("%H:%M:%S")
+    with open(log_file, "a", encoding="utf-8") as f:
+        f.write(f"[{timestamp}] {message}\n")
+
+# ======================================
+# CONTADOR DE MENSAJES WHATSAPP
+# ======================================
+
+def load_whatsapp_counter():
+    try:
+        with open("whatsapp_counter.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        return {"date": datetime.now().strftime("%Y-%m-%d"), "count": 0}
+
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    if data["date"] != today:
+        return {"date": today, "count": 0}
+
+    return data
+
+
+def save_whatsapp_counter(counter):
+    with open("whatsapp_counter.json", "w", encoding="utf-8") as f:
+        json.dump(counter, f, ensure_ascii=False, indent=2)
 
 # ======================================
 # DATOS DEL ATLETA
@@ -250,7 +285,11 @@ def send_whatsapp(text):
 # ======================================
 
 def main():
+    write_log("=== EJECUCIÓN INICIADA ===")
+    write_log(f"SEND_WHATSAPP = {SEND_WHATSAPP}")
+
     print("Obteniendo datos de Strava...")
+    write_log("Obteniendo datos de Strava")
 
     raw = get_recent_activities(20)
 
@@ -261,9 +300,13 @@ def main():
     ]
 
     print("Calculando métricas...")
+    write_log("Calculando métricas")
+
     summary = build_summary(activities)
 
     print("Generando plan IA...")
+    write_log("Generando plan IA")
+
     prompt = build_prompt(activities, summary)
     plan = get_plan(prompt)
 
@@ -275,11 +318,26 @@ def main():
 
     if SEND_WHATSAPP:
         print("Enviando WhatsApp...")
+        write_log("Enviando WhatsApp...")
+
         whatsapp_status = send_whatsapp(plan)
         print("Estado WhatsApp:", whatsapp_status)
+        write_log(f"Estado WhatsApp: {whatsapp_status}")
+
+        # Contador
+        counter = load_whatsapp_counter()
+        if whatsapp_status == "sent":
+            counter["count"] += 1
+            save_whatsapp_counter(counter)
+            write_log(f"Contador actualizado: {counter['count']} mensajes hoy")
+        else:
+            write_log("Contador no incrementado (no enviado)")
+
     else:
         print("WhatsApp desactivado para esta ejecución.")
+        write_log("WhatsApp desactivado")
         whatsapp_status = "disabled"
+        counter = load_whatsapp_counter()
 
     # ======================================
     # GUARDAR JSON PARA EL DASHBOARD
@@ -290,11 +348,15 @@ def main():
         "summary": summary,
         "plan": plan,
         "generated_at": datetime.now().isoformat(),
-        "whatsapp_status": whatsapp_status
+        "whatsapp_status": whatsapp_status,
+        "whatsapp_count_today": counter["count"]
     }
 
     with open("dashboard_data.json", "w", encoding="utf-8") as f:
         json.dump(dashboard_data, f, ensure_ascii=False, indent=2)
+
+    write_log("dashboard_data.json actualizado")
+    write_log("=== EJECUCIÓN FINALIZADA ===\n")
 
     print("dashboard_data.json actualizado correctamente.")
     print("✔ Listo")
