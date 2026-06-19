@@ -214,22 +214,31 @@ fetch("dashboard_data.json")
     .then(response => response.json())
     .then(data => {
         
-        // Mostrar estado del WhatsApp
-        const ws = data.whatsapp_status;
-        const wsDiv = document.getElementById("whatsapp-status");
+        // === TARJETA PRO DE WHATSAPP ===
+const card = document.getElementById("whatsapp-status-card");
+const title = document.getElementById("whatsapp-title");
+const message = document.getElementById("whatsapp-message");
 
-        if (ws === "sent") {
-            wsDiv.innerHTML = "📨 Mensaje enviado por WhatsApp";
-            wsDiv.classList.add("status-card");
-        } 
-        else if (ws === "limit_reached") {
-            wsDiv.innerHTML = "⚠️ Límite diario alcanzado. Inténtalo mañana.";
-            wsDiv.classList.add("status-card", "warning");
-        } 
-        else {
-            wsDiv.innerHTML = "❌ Error enviando WhatsApp";
-            wsDiv.classList.add("status-card", "error");
-        }
+if (data.whatsapp_status === "sent") {
+    card.classList.add("success", "visible");
+    title.textContent = "Mensaje enviado por WhatsApp";
+    message.textContent = "Tu análisis diario ha sido enviado correctamente.";
+}
+
+else if (data.whatsapp_status === "limit_reached") {
+    card.classList.add("warning", "visible");
+    title.textContent = "Límite diario alcanzado";
+    message.textContent = "Twilio solo permite 50 mensajes al día en el Sandbox. Inténtalo mañana.";
+}
+
+else {
+    card.classList.add("error", "visible");
+    title.textContent = "Error enviando WhatsApp";
+    message.textContent = "Hubo un problema al enviar el mensaje. Revisa Twilio o inténtalo más tarde.";
+}
+
+card.classList.remove("hidden");
+
 
         // Aquí sigue tu código actual para pintar actividades, resumen, etc.
     });
