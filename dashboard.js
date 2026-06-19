@@ -9,7 +9,30 @@ async function loadData() {
   const res = await fetch("dashboard_data.json");
   const data = await res.json();
 
-  // Predicción Media Maratón
+  // === TARJETA PRO DE WHATSAPP ===
+  const card = document.getElementById("whatsapp-status-card");
+  const title = document.getElementById("whatsapp-title");
+  const message = document.getElementById("whatsapp-message");
+
+  if (data.whatsapp_status === "sent") {
+      card.classList.add("success", "visible");
+      title.textContent = "Mensaje enviado por WhatsApp";
+      message.textContent = "Tu análisis diario ha sido enviado correctamente.";
+  }
+  else if (data.whatsapp_status === "limit_reached") {
+      card.classList.add("warning", "visible");
+      title.textContent = "Límite diario alcanzado";
+      message.textContent = "Twilio solo permite 50 mensajes al día en el Sandbox. Inténtalo mañana.";
+  }
+  else {
+      card.classList.add("error", "visible");
+      title.textContent = "Error enviando WhatsApp";
+      message.textContent = "Hubo un problema al enviar el mensaje. Revisa Twilio o inténtalo más tarde.";
+  }
+
+  card.classList.remove("hidden");
+
+  // === RESTO DEL DASHBOARD ===
   const prediction = predictHalfMarathon(data.activities);
   document.getElementById("predictionText").textContent = prediction;
 
@@ -87,46 +110,44 @@ function renderMetrics(summary) {
   `;
 }
 
-
 function renderCharts(activities, summary) {
   const labels = activities.map(a => a.date);
 
   // Ritmo
   new Chart(document.getElementById("paceChart"), {
-  type: "line",
-  data: {
-    labels,
-    datasets: [{
-      label: "Ritmo",
-      data: activities.map(a => a.pace_min_km),
-      borderColor: "#0070f3",
-      backgroundColor: "rgba(0,112,243,0.2)",
-      tension: 0.3
-    }]
-  },
-  options: {
-    plugins: {
-      tooltip: {
-        callbacks: {
-          label: function(context) {
-            const raw = context.raw;
-            return "Ritmo: " + formatPace(raw);
+    type: "line",
+    data: {
+      labels,
+      datasets: [{
+        label: "Ritmo",
+        data: activities.map(a => a.pace_min_km),
+        borderColor: "#0070f3",
+        backgroundColor: "rgba(0,112,243,0.2)",
+        tension: 0.3
+      }]
+    },
+    options: {
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const raw = context.raw;
+              return "Ritmo: " + formatPace(raw);
+            }
           }
         }
-      }
-    },
-    scales: {
-      y: {
-        ticks: {
-          callback: function(value) {
-            return formatPace(value);
+      },
+      scales: {
+        y: {
+          ticks: {
+            callback: function(value) {
+              return formatPace(value);
+            }
           }
         }
       }
     }
-  }
-});
-
+  });
 
   // Distancia
   new Chart(document.getElementById("distanceChart"), {
@@ -159,9 +180,6 @@ function renderAI(text) {
   document.getElementById("aiText").textContent = text;
 }
 
-
-
-// Predicción Media Maratón
 function predictHalfMarathon(activities) {
   const lastRuns = activities.slice(-6);
   const avgPace = lastRuns.reduce((acc, a) => acc + a.pace_min_km, 0) / lastRuns.length;
@@ -174,6 +192,7 @@ function predictHalfMarathon(activities) {
 }
 
 loadData();
+
 document.getElementById("refreshBtn").addEventListener("click", async () => {
   const bar = document.getElementById("loadingBar");
   bar.classList.remove("hidden");
@@ -187,12 +206,10 @@ document.getElementById("refreshBtn").addEventListener("click", async () => {
       "Authorization": "Bearer TU_TOKEN_PERSONAL",
       "X-GitHub-Api-Version": "2022-11-28"
     },
-    body: JSON.stringify({
-      ref: "main"
-    })
+    body: JSON.stringify({ ref: "main" })
   });
 
-  // Animación de progreso falsa mientras GitHub Actions trabaja
+  // Animación de progreso
   let progress = 10;
   const interval = setInterval(() => {
     progress += 5;
@@ -200,7 +217,6 @@ document.getElementById("refreshBtn").addEventListener("click", async () => {
     if (progress >= 95) clearInterval(interval);
   }, 500);
 
-  // Esperar 30–60s a que GitHub Actions termine
   setTimeout(() => {
     bar.style.width = "100%";
     setTimeout(() => {
@@ -210,37 +226,3 @@ document.getElementById("refreshBtn").addEventListener("click", async () => {
     }, 800);
   }, 45000);
 });
-fetch("dashboard_data.json")
-    .then(response => response.json())
-    .then(data => {
-        
-        // === TARJETA PRO DE WHATSAPP ===
-const card = document.getElementById("whatsapp-status-card");
-const title = document.getElementById("whatsapp-title");
-const message = document.getElementById("whatsapp-message");
-
-if (data.whatsapp_status === "sent") {
-    card.classList.add("success", "visible");
-    title.textContent = "Mensaje enviado por WhatsApp";
-    message.textContent = "Tu análisis diario ha sido enviado correctamente.";
-}
-
-else if (data.whatsapp_status === "limit_reached") {
-    card.classList.add("warning", "visible");
-    title.textContent = "Límite diario alcanzado";
-    message.textContent = "Twilio solo permite 50 mensajes al día en el Sandbox. Inténtalo mañana.";
-}
-
-else {
-    card.classList.add("error", "visible");
-    title.textContent = "Error enviando WhatsApp";
-    message.textContent = "Hubo un problema al enviar el mensaje. Revisa Twilio o inténtalo más tarde.";
-}
-
-card.classList.remove("hidden");
-
-
-        // Aquí sigue tu código actual para pintar actividades, resumen, etc.
-    });
-
-
