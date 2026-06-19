@@ -1,9 +1,12 @@
 .refresh-container {
   display: flex;
-  justify-content: center;   /* ← ESTO CENTRA LOS BOTONES */
+  justify-content: center;
+  align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+  width: 100%;
 }
+
 
 
 .refresh-btn {
