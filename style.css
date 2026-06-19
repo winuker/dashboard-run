@@ -209,3 +209,11 @@ header {
     font-size: 0.95rem;
     color: #3a3a3c;
 }
+
+.whatsapp-counter {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0070f3;
+}
+
