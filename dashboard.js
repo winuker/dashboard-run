@@ -210,4 +210,28 @@ document.getElementById("refreshBtn").addEventListener("click", async () => {
     }, 800);
   }, 45000);
 });
+fetch("dashboard_data.json")
+    .then(response => response.json())
+    .then(data => {
+        
+        // Mostrar estado del WhatsApp
+        const ws = data.whatsapp_status;
+        const wsDiv = document.getElementById("whatsapp-status");
+
+        if (ws === "sent") {
+            wsDiv.innerHTML = "📨 Mensaje enviado por WhatsApp";
+            wsDiv.classList.add("status-card");
+        } 
+        else if (ws === "limit_reached") {
+            wsDiv.innerHTML = "⚠️ Límite diario alcanzado. Inténtalo mañana.";
+            wsDiv.classList.add("status-card", "warning");
+        } 
+        else {
+            wsDiv.innerHTML = "❌ Error enviando WhatsApp";
+            wsDiv.classList.add("status-card", "error");
+        }
+
+        // Aquí sigue tu código actual para pintar actividades, resumen, etc.
+    });
+
 
