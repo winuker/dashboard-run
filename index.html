@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard PRO - Running</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard PRO – Entrenamientos</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Leaflet (mapas) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <header>
+    <h1>🏃 Dashboard PRO – Entrenamientos Strava + IA</h1>
+    <p class="subtitle">Actualizado automáticamente con cada entreno</p>
+  </header>
 
-    <h1>🏃 Dashboard PRO de Entrenamiento</h1>
+  <main>
 
-    <section id="summary">
-        <h2>📊 Resumen del día</h2>
-        <div id="analysis"></div>
-    </section>
+    <!-- TARJETAS DE MÉTRICAS -->
+    <section id="metrics" class="card-grid"></section>
 
-    <section id="charts">
-        <h2>📈 Gráficos</h2>
+    <!-- GRÁFICOS -->
+    <section class="charts">
+      <div class="chart-card">
+        <h2>📈 Ritmo por sesión</h2>
         <canvas id="paceChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h2>📊 Distancia por día</h2>
         <canvas id="distanceChart"></canvas>
-        <canvas id="fatigueChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h2>🔥 Carga ATL / CTL / TSB</h2>
+        <canvas id="loadChart"></canvas>
+      </div>
     </section>
 
-    <section id="map">
-        <h2>🗺️ Mapa de rutas</h2>
-        <div id="mapid"></div>
+    <!-- MAPA -->
+    <section class="map-section">
+      <h2>🗺️ Mapa de rutas</h2>
+      <div id="map"></div>
     </section>
 
-    <section id="history">
-        <h2>📚 Histórico de planes</h2>
-        <div id="historyList"></div>
+    <!-- ANÁLISIS IA -->
+    <section class="analysis card">
+      <h2>🤖 Análisis IA</h2>
+      <pre id="aiText"></pre>
     </section>
 
-    <script src="dashboard.js"></script>
+  </main>
+
+  <script src="dashboard.js"></script>
 </body>
 </html>
