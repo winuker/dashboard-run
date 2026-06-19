@@ -38,18 +38,40 @@ function renderCharts(activities, summary) {
 
   // Ritmo
   new Chart(document.getElementById("paceChart"), {
-    type: "line",
-    data: {
-      labels,
-      datasets: [{
-        label: "Ritmo (min/km)",
-        data: activities.map(a => a.pace_min_km),
-        borderColor: "#0070f3",
-        backgroundColor: "rgba(0,112,243,0.2)",
-        tension: 0.3
-      }]
+  type: "line",
+  data: {
+    labels,
+    datasets: [{
+      label: "Ritmo",
+      data: activities.map(a => a.pace_min_km),
+      borderColor: "#0070f3",
+      backgroundColor: "rgba(0,112,243,0.2)",
+      tension: 0.3
+    }]
+  },
+  options: {
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const raw = context.raw;
+            return "Ritmo: " + formatPace(raw);
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        ticks: {
+          callback: function(value) {
+            return formatPace(value);
+          }
+        }
+      }
     }
-  });
+  }
+});
+
 
   // Distancia
   new Chart(document.getElementById("distanceChart"), {
