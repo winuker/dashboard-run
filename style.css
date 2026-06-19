@@ -114,7 +114,7 @@ header {
 }
 
 /* ========================================================= */
-/* === TARJETA WHATSAPP – ESTILO APPLE FITNESS (NUEVO) ==== */
+/* === TARJETA WHATSAPP – ESTILO APPLE FITNESS + PULSE ==== */
 /* ========================================================= */
 
 .whatsapp-card {
@@ -126,7 +126,7 @@ header {
     background: #ffffff;
     border: 1px solid #e5e5e7;
     margin: 25px auto;
-    max-width: 420px;
+    max-width: 400px;
     width: 92%;
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     opacity: 0;
@@ -144,26 +144,41 @@ header {
 }
 
 .whatsapp-card.success {
-    border-left: 6px solid #34c759; /* Apple green */
+    border-left: 6px solid #34c759;
+    animation: pulse-success 1.6s ease-out infinite;
 }
 
 .whatsapp-card.warning {
-    border-left: 6px solid #ffcc00; /* Apple yellow */
+    border-left: 6px solid #ffcc00;
 }
 
 .whatsapp-card.error {
-    border-left: 6px solid #ff3b30; /* Apple red */
+    border-left: 6px solid #ff3b30;
+}
+
+/* === ANIMACIÓN PULSE APPLE WATCH === */
+
+@keyframes pulse-success {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.35);
+    }
+    70% {
+        box-shadow: 0 0 0 14px rgba(52, 199, 89, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 199, 89, 0);
+    }
 }
 
 .whatsapp-card h3 {
     margin: 0;
     font-size: 1.15rem;
     font-weight: 600;
-    color: #1c1c1e; /* Apple dark text */
+    color: #1c1c1e;
 }
 
 .whatsapp-card p {
     margin: 4px 0 0;
     font-size: 0.95rem;
-    color: #3a3a3c; /* Apple secondary text */
+    color: #3a3a3c;
 }
