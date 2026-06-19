@@ -1,7 +1,4 @@
 import os
-
-SEND_WHATSAPP = os.getenv("SEND_WHATSAPP", "false") == "true"
-
 import json
 import requests
 from datetime import datetime
@@ -11,6 +8,11 @@ from auto_refresh import ensure_valid_token
 from dotenv import load_dotenv
 load_dotenv()
 
+# ======================================
+# CONTROL ENVÍO WHATSAPP
+# ======================================
+
+SEND_WHATSAPP = os.getenv("SEND_WHATSAPP", "false") == "true"
 
 # ======================================
 # CONFIGURACIÓN (VARIABLES DE ENTORNO)
@@ -52,7 +54,6 @@ Z4 160-166
 Z5 >166
 """
 
-
 # ======================================
 # STRAVA API
 # ======================================
@@ -72,7 +73,6 @@ def get_recent_activities(n=20):
 
     return r.json()
 
-
 # ======================================
 # SIMPLIFICAR ACTIVIDAD
 # ======================================
@@ -80,7 +80,6 @@ def get_recent_activities(n=20):
 def simplify_activity(a):
     distance_km = a["distance"] / 1000
     time_min = a["moving_time"] / 60
-
     pace = time_min / distance_km if distance_km > 0 else 0
 
     return {
@@ -93,7 +92,6 @@ def simplify_activity(a):
         "max_hr": a.get("max_heartrate"),
         "elevation": a.get("total_elevation_gain", 0)
     }
-
 
 # ======================================
 # INTENSIDAD
@@ -113,14 +111,12 @@ def intensity_factor(hr):
     else:
         return 1.05
 
-
 # ======================================
 # CARGA ENTRENAMIENTO
 # ======================================
 
 def training_load(a):
     return round(a["duration_min"] * intensity_factor(a["avg_hr"]))
-
 
 # ======================================
 # CTL / ATL / TSB
@@ -141,7 +137,6 @@ def calculate_form(activities):
         "CTL": round(ctl, 1),
         "TSB": round(tsb, 1)
     }
-
 
 # ======================================
 # RESUMEN GENERAL
@@ -165,7 +160,6 @@ def build_summary(activities):
         "CTL": form["CTL"],
         "TSB": form["TSB"]
     }
-
 
 # ======================================
 # PROMPT
@@ -202,7 +196,6 @@ Restricciones:
 - Formato WhatsApp
 """
 
-
 # ======================================
 # OPENAI
 # ======================================
@@ -223,15 +216,11 @@ No seas genérico.
 Justifica cada recomendación.
 """
             },
-            {
-                "role": "user",
-                "content": prompt
-            }
+            {"role": "user", "content": prompt}
         ]
     )
 
     return resp.choices[0].message.content
-
 
 # ======================================
 # WHATSAPP
@@ -242,53 +231,19 @@ def send_whatsapp(text):
 
     try:
         twilio_client.messages.create(
-            from_=os.getenv("WHATSAPP_FROM"),
+            from_=WHATSAPP_FROM,
             body=text,
-            to=os.getenv("WHATSAPP_TO")
+            to=WHATSAPP_TO
         )
         return "sent"
 
     except TwilioRestException as e:
         if "429" in str(e):
             return "limit_reached"
-        else:
-            return "error"
+        return "error"
 
     except Exception:
         return "error"
-
-# ======================================
-# SUBIR JSON A GITHUB
-# ======================================
-
-import base64
-
-def upload_to_github(filepath, repo, branch, token):
-    url = f"https://api.github.com/repos/{repo}/contents/{filepath}"
-
-    with open(filepath, "rb") as f:
-        content = f.read()
-
-    encoded = base64.b64encode(content).decode("utf-8")
-
-    # Obtener SHA si el archivo ya existe
-    r = requests.get(url, headers={"Authorization": f"token {token}"})
-    sha = r.json().get("sha") if r.status_code == 200 else None
-
-    data = {
-        "message": "update dashboard data",
-        "content": encoded,
-        "branch": branch
-    }
-
-    if sha:
-        data["sha"] = sha
-
-    r = requests.put(url, headers={"Authorization": f"token {token}"}, json=data)
-
-    if r.status_code not in [200, 201]:
-        raise Exception(f"Error subiendo a GitHub: {r.text}")
-
 
 # ======================================
 # MAIN
@@ -306,11 +261,9 @@ def main():
     ]
 
     print("Calculando métricas...")
-
     summary = build_summary(activities)
 
     print("Generando plan IA...")
-
     prompt = build_prompt(activities, summary)
     plan = get_plan(prompt)
 
@@ -328,22 +281,22 @@ def main():
         print("WhatsApp desactivado para esta ejecución.")
         whatsapp_status = "disabled"
 
-
     # ======================================
     # GUARDAR JSON PARA EL DASHBOARD
     # ======================================
 
     dashboard_data = {
-    "activities": activities,
-    "summary": summary,
-    "plan": plan,
-    "generated_at": datetime.now().isoformat(),
-    "whatsapp_status": whatsapp_status
+        "activities": activities,
+        "summary": summary,
+        "plan": plan,
+        "generated_at": datetime.now().isoformat(),
+        "whatsapp_status": whatsapp_status
     }
 
     with open("dashboard_data.json", "w", encoding="utf-8") as f:
         json.dump(dashboard_data, f, ensure_ascii=False, indent=2)
-   
+
+    print("dashboard_data.json actualizado correctamente.")
     print("✔ Listo")
 
 if __name__ == "__main__":
