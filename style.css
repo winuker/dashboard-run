@@ -1,23 +1,53 @@
 body {
-    background: #111;
-    color: #eee;
-    font-family: Arial, sans-serif;
-    margin: 20px;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
 }
 
-h1, h2 {
-    color: #00e676;
+header {
+  text-align: center;
+  padding: 30px 10px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
 }
 
-#mapid {
-    height: 400px;
-    margin-top: 20px;
-    border-radius: 10px;
+.subtitle {
+  color: #8b949e;
 }
 
-canvas {
-    margin: 30px 0;
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
+
+.card {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+}
+
+.chart-card {
+  background: #161b22;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+}
+
+#map {
+  height: 400px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+}
+
+.analysis pre {
+  white-space: pre-wrap;
+  font-size: 14px;
+  color: #c9d1d9;
+}
+
