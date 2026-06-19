@@ -53,3 +53,83 @@
   font-weight: 600;
   color: #0070f3;
 }
+
+/* ============================
+   📱 MODO MÓVIL COMPACTO
+   ============================ */
+@media (max-width: 600px) {
+
+  body {
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Botones en columna */
+  .refresh-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .refresh-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  /* Tarjeta WhatsApp */
+  .whatsapp-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 14px;
+  }
+
+  .whatsapp-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  /* Tarjetas de métricas en 1 columna */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  /* Gráficos */
+  .charts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .chart-card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  canvas {
+    max-width: 100% !important;
+  }
+
+  /* Texto IA */
+  #aiText {
+    font-size: 14px;
+    white-space: pre-wrap;
+  }
+}
+
