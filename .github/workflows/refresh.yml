@@ -44,14 +44,20 @@ jobs:
 
     - name: Commit y push del JSON actualizado
       env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
-        git pull origin main --rebase
+
+        # Traer últimos cambios sin mezclar
+        git fetch origin main
+        git reset --soft origin/main
+
+        # Añadir los archivos generados por el script
         git add dashboard_data.json
         git add whatsapp_counter.json
+
         git commit -m "Actualización automática" || echo "No hay cambios para commitear"
+
         git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/winuker/dashboard-run.git
         git push origin HEAD:main
-
