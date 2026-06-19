@@ -33,7 +33,7 @@ jobs:
         run: |
           python plan_entreno_gpt5_v2.py
 
-            - name: Commit y push del JSON actualizado
+      - name: Commit y push del JSON actualizado
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
