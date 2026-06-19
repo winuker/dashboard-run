@@ -323,9 +323,10 @@ def main():
 
     upload_to_github(
         filepath="dashboard_data.json",
-        repo=os.environ["GITHUB_REPO"],
-        branch=os.environ["GITHUB_BRANCH"],
-        token=os.environ["GITHUB_TOKEN"]
+        repo=os.environ["REPO_NAME"],
+        branch=os.environ["REPO_BRANCH"],
+        token=os.environ["GH_TOKEN"]
+
     )
 
     # ======================================
