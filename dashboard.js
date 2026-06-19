@@ -1,3 +1,10 @@
+function formatPace(pace) {
+  const minutes = Math.floor(pace);
+  const seconds = Math.round((pace - minutes) * 60);
+  const padded = seconds.toString().padStart(2, "0");
+  return `${minutes}:${padded} / km`;
+}
+
 async function loadData() {
   const res = await fetch("dashboard_data.json");
   const data = await res.json();
