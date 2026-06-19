@@ -17,6 +17,8 @@
 
 <body>
   <header>
+
+    <!-- BOTONES -->
     <div class="refresh-container">
       <button class="refresh-btn" id="refreshBtn">
         🔄 Refrescar
@@ -27,9 +29,13 @@
       </button>
     </div>
 
+    <!-- BARRA DE PROGRESO -->
+    <div id="loadingBar" class="loading-bar hidden"></div>
+
     <h1>🏃 Dashboard PRO – Entrenamientos Strava + IA</h1>
     <p class="subtitle">Actualizado automáticamente con cada entreno</p>
     
+    <!-- TARJETA WHATSAPP -->
     <div id="whatsapp-status-card" class="whatsapp-card hidden">
       <div class="whatsapp-icon">💬</div>
       <div class="whatsapp-content">
@@ -38,10 +44,12 @@
         <p id="whatsapp-counter" class="whatsapp-counter"></p>
       </div>
     </div>
+
   </header>
 
   <main>
-    <!-- ANÁLISIS IA PRIMERO -->
+
+    <!-- ANÁLISIS IA -->
     <section class="analysis card">
       <h2>🤖 Análisis IA</h2>
       <pre id="aiText"></pre>
@@ -73,6 +81,7 @@
         <canvas id="loadChart"></canvas>
       </div>
     </section>
+
   </main>
 
   <script src="dashboard.js"></script>
