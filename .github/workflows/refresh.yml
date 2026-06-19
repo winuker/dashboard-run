@@ -2,6 +2,11 @@ name: Refrescar análisis
 
 on:
   workflow_dispatch:
+    inputs:
+      send_whatsapp:
+        description: "Enviar WhatsApp"
+        required: true
+        default: "false"
 
 jobs:
   run-script:
@@ -25,6 +30,7 @@ jobs:
 
     - name: Ejecutar script
       env:
+        SEND_WHATSAPP: ${{ github.event.inputs.send_whatsapp }}
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
         STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
