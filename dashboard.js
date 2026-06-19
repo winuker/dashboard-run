@@ -22,16 +22,71 @@ async function loadData() {
 function renderMetrics(summary) {
   const container = document.getElementById("metrics");
 
+  function colorATL(value) {
+    if (value < 40) return "green";
+    if (value < 70) return "orange";
+    return "red";
+  }
+
+  function colorCTL(value) {
+    if (value < 30) return "gray";
+    if (value < 60) return "blue";
+    return "green";
+  }
+
+  function colorTSB(value) {
+    if (value > 10) return "green";
+    if (value >= 0) return "orange";
+    return "red";
+  }
+
   container.innerHTML = `
-    <div class="card"><h3>KM Totales</h3><p>${summary.km_total} km</p></div>
-    <div class="card"><h3>Tiempo Total</h3><p>${summary.time_total_min} min</p></div>
-    <div class="card"><h3>Elevación</h3><p>${summary.elevation_total} m</p></div>
-    <div class="card"><h3>FC Media</h3><p>${summary.avg_hr_global ?? "-"}</p></div>
-    <div class="card"><h3>ATL</h3><p>${summary.ATL}</p></div>
-    <div class="card"><h3>CTL</h3><p>${summary.CTL}</p></div>
-    <div class="card"><h3>TSB</h3><p>${summary.TSB}</p></div>
+    <div class="card">
+      <h3>KM Totales</h3>
+      <p>${summary.km_total} km</p>
+    </div>
+
+    <div class="card">
+      <h3>Tiempo Total</h3>
+      <p>${summary.time_total_min} min</p>
+    </div>
+
+    <div class="card">
+      <h3>Elevación</h3>
+      <p>${summary.elevation_total} m</p>
+    </div>
+
+    <div class="card">
+      <h3>FC Media</h3>
+      <p>${summary.avg_hr_global ?? "-"}</p>
+    </div>
+
+    <div class="card">
+      <h3>ATL</h3>
+      <p style="color:${colorATL(summary.ATL)}; font-weight:bold;">
+        ${summary.ATL}
+      </p>
+      <small class="legend">Fatiga reciente</small>
+    </div>
+
+    <div class="card">
+      <h3>CTL</h3>
+      <p style="color:${colorCTL(summary.CTL)}; font-weight:bold;">
+        ${summary.CTL}
+      </p>
+      <small class="legend">Forma acumulada (base)</small>
+    </div>
+
+    <div class="card">
+      <h3>TSB</h3>
+      <p style="color:${colorTSB(summary.TSB)}; font-weight:bold;">
+        ${summary.TSB}
+      </p>
+      <small class="legend">Frescura actual</small>
+    </div>
   `;
 }
+
 
 function renderCharts(activities, summary) {
   const labels = activities.map(a => a.date);
