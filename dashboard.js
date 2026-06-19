@@ -15,33 +15,28 @@ async function loadData() {
   const message = document.getElementById("whatsapp-message");
   const counter = document.getElementById("whatsapp-counter");
 
+  if (data.whatsapp_status === "sent") {
+    card.classList.add("success", "visible");
+    title.textContent = "Mensaje enviado por WhatsApp";
+    message.textContent = "Tu análisis diario ha sido enviado correctamente.";
+  }
+  else if (data.whatsapp_status === "limit_reached") {
+    card.classList.add("warning", "visible");
+    title.textContent = "Límite diario alcanzado";
+    message.textContent = "Twilio solo permite 50 mensajes al día en el Sandbox.";
+  }
+  else if (data.whatsapp_status === "disabled") {
+    card.classList.add("visible");
+    title.textContent = "WhatsApp desactivado";
+    message.textContent = "Has refrescado sin enviar WhatsApp.";
+  }
+  else {
+    card.classList.add("error", "visible");
+    title.textContent = "Error enviando WhatsApp";
+    message.textContent = "Hubo un problema al enviar el mensaje.";
+  }
 
-    if (data.whatsapp_status === "sent") {
-        card.classList.add("success", "visible");
-        title.textContent = "Mensaje enviado por WhatsApp";
-        message.textContent = "Tu análisis diario ha sido enviado correctamente.";
-        counter.textContent = `Mensajes enviados hoy: ${data.whatsapp_count_today} / 50`;
-    }
-    else if (data.whatsapp_status === "limit_reached") {
-        card.classList.add("warning", "visible");
-        title.textContent = "Límite diario alcanzado";
-        message.textContent = "Twilio solo permite 50 mensajes al día en el Sandbox.";
-        counter.textContent = `Mensajes enviados hoy: ${data.whatsapp_count_today} / 50`;
-    }
-        else if (data.whatsapp_status === "disabled") {
-        card.classList.add("visible");
-        title.textContent = "WhatsApp desactivado";
-        message.textContent = "Has refrescado sin enviar WhatsApp.";
-        counter.textContent = `Mensajes enviados hoy: ${data.whatsapp_count_today} / 50`;
-    }
-    else {
-        card.classList.add("error", "visible");
-        title.textContent = "Error enviando WhatsApp";
-        message.textContent = "Hubo un problema al enviar el mensaje.";
-        counter.textContent = `Mensajes enviados hoy: ${data.whatsapp_count_today} / 50`;
-    }
-
-
+  counter.textContent = `Mensajes enviados hoy: ${data.whatsapp_count_today} / 50`;
   card.classList.remove("hidden");
 
   // === RESTO DEL DASHBOARD ===
