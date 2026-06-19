@@ -1,230 +1,50 @@
-/* === BASE GENERAL === */
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #f5f7fa;
-  color: #1a1a1a;
-}
-
-header {
-  text-align: center;
-  padding: 30px 10px;
-  background: #ffffff;
-  border-bottom: 1px solid #d0d7de;
-}
-
-.subtitle {
-  color: #555;
-}
-
-/* === TARJETAS GENERALES === */
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-  padding: 20px;
-}
-
-.card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #e1e4e8;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.prediction-card {
-  margin: 20px;
-}
-
-.chart-card {
-  background: #ffffff;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 12px;
-  border: 1px solid #e1e4e8;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.analysis pre {
-  white-space: pre-wrap;
-  font-size: 15px;
-  color: #333;
-}
-
-/* === MODO MÓVIL === */
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 22px;
-  }
-
-  .chart-card {
-    margin: 10px;
-    padding: 15px;
-  }
-
-  .analysis pre {
-    font-size: 14px;
-  }
-}
-
-.legend {
-  display: block;
-  margin-top: 5px;
-  font-size: 12px;
-  color: #666;
-}
-
-/* === BOTÓN REFRESH === */
-
 .refresh-container {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .refresh-btn {
-    background: #0070f3;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.15s ease, background 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  background: #0070f3;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
 }
 
 .refresh-btn:hover {
-    background: #0059c9;
-    transform: translateY(-2px);
+  background: #0059c9;
+  transform: translateY(-2px);
 }
 
 .refresh-btn:active {
-    transform: translateY(0px);
+  transform: translateY(0px);
 }
 
-
 .loading-bar {
+  height: 4px;
+  background: #0070f3;
   width: 0%;
-  height: 6px;
-  background: #00b341;
-  margin-top: 10px;
-  border-radius: 4px;
   transition: width 0.3s ease;
+  margin-top: 10px;
 }
 
 .hidden {
   display: none;
 }
 
-/* ========================================================= */
-/* === TARJETA WHATSAPP – ESTILO APPLE FITNESS + ANIMACIONES */
-/* ========================================================= */
-
-.whatsapp-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 18px 20px;
-    border-radius: 18px;
-    background: #ffffff;
-    border: 1px solid #e5e5e7;
-    margin: 25px auto;
-    max-width: 420px;
-    width: 92%;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.35s ease;
-}
-
-.whatsapp-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.whatsapp-icon {
-    font-size: 2.2rem;
-}
-
-/* === SUCCESS (pulse Apple Watch) === */
-
-.whatsapp-card.success {
-    border-left: 6px solid #34c759;
-    animation: pulse-success 1.6s ease-out infinite;
-}
-
-@keyframes pulse-success {
-    0% {
-        box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.35);
-    }
-    70% {
-        box-shadow: 0 0 0 14px rgba(52, 199, 89, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(52, 199, 89, 0);
-    }
-}
-
-/* === WARNING (vibración suave estilo Apple Watch) === */
-
-.whatsapp-card.warning {
-    border-left: 6px solid #ffcc00;
-    animation: warning-shake 0.45s ease-in-out 1;
-}
-
-@keyframes warning-shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-3px); }
-    40% { transform: translateX(3px); }
-    60% { transform: translateX(-2px); }
-    80% { transform: translateX(2px); }
-    100% { transform: translateX(0); }
-}
-
-/* === ERROR (shake iOS clásico) === */
-
-.whatsapp-card.error {
-    border-left: 6px solid #ff3b30;
-    animation: error-shake 0.55s ease-in-out 1;
-}
-
-@keyframes error-shake {
-    0% { transform: translateX(0); }
-    15% { transform: translateX(-6px); }
-    30% { transform: translateX(6px); }
-    45% { transform: translateX(-5px); }
-    60% { transform: translateX(5px); }
-    75% { transform: translateX(-3px); }
-    100% { transform: translateX(0); }
-}
-
-/* === TEXTO TARJETA === */
-
-.whatsapp-card h3 {
-    margin: 0;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #1c1c1e;
-}
-
-.whatsapp-card p {
-    margin: 4px 0 0;
-    font-size: 0.95rem;
-    color: #3a3a3c;
-}
-
 .whatsapp-counter {
-    margin-top: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #0070f3;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0070f3;
 }
-
