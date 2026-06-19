@@ -130,3 +130,57 @@
     white-space: pre-wrap;
   }
 }
+
+/* ============================
+   🎨 TARJETA PRO WHATSAPP
+   ============================ */
+
+.whatsapp-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  background: #f5f5f7;
+  border-left: 6px solid transparent;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.35s ease;
+}
+
+.whatsapp-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.whatsapp-card.success {
+  border-left-color: #00b341;
+  background: #e9f9ef;
+}
+
+.whatsapp-card.warning {
+  border-left-color: #f2a900;
+  background: #fff7e6;
+}
+
+.whatsapp-card.error {
+  border-left-color: #ff4d4d;
+  background: #ffecec;
+}
+
+.whatsapp-icon {
+  font-size: 32px;
+}
+
+.whatsapp-content h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.whatsapp-content p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
