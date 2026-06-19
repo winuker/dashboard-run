@@ -27,7 +27,7 @@ async function loadData() {
   else {
       card.classList.add("error", "visible");
       title.textContent = "Error enviando WhatsApp";
-      message.textContent = "Hubo un problema al enviar el mensaje. Revisa Twilio o inténtalo más tarde.";
+      message.textContent = "Hubo un problema al enviar el mensaje.";
   }
 
   card.classList.remove("hidden");
@@ -39,7 +39,6 @@ async function loadData() {
   renderMetrics(data.summary);
   renderCharts(data.activities, data.summary);
   renderAI(data.plan);
-  renderMap(data.activities);
 }
 
 function renderMetrics(summary) {
@@ -113,7 +112,6 @@ function renderMetrics(summary) {
 function renderCharts(activities, summary) {
   const labels = activities.map(a => a.date);
 
-  // Ritmo
   new Chart(document.getElementById("paceChart"), {
     type: "line",
     data: {
@@ -125,31 +123,9 @@ function renderCharts(activities, summary) {
         backgroundColor: "rgba(0,112,243,0.2)",
         tension: 0.3
       }]
-    },
-    options: {
-      plugins: {
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              const raw = context.raw;
-              return "Ritmo: " + formatPace(raw);
-            }
-          }
-        }
-      },
-      scales: {
-        y: {
-          ticks: {
-            callback: function(value) {
-              return formatPace(value);
-            }
-          }
-        }
-      }
     }
   });
 
-  // Distancia
   new Chart(document.getElementById("distanceChart"), {
     type: "bar",
     data: {
@@ -162,7 +138,6 @@ function renderCharts(activities, summary) {
     }
   });
 
-  // ATL / CTL / TSB
   new Chart(document.getElementById("loadChart"), {
     type: "line",
     data: {
@@ -193,12 +168,22 @@ function predictHalfMarathon(activities) {
 
 loadData();
 
-document.getElementById("refreshBtn").addEventListener("click", async () => {
+// === BOTÓN 1: REFRESCAR SIN WHATSAPP ===
+document.getElementById("refreshBtn").addEventListener("click", () => {
+  triggerWorkflow(false);
+});
+
+// === BOTÓN 2: REFRESCAR + WHATSAPP ===
+document.getElementById("refreshBtnWhatsapp").addEventListener("click", () => {
+  triggerWorkflow(true);
+});
+
+// === FUNCIÓN GENERAL PARA LLAMAR AL WORKFLOW ===
+async function triggerWorkflow(sendWhatsapp) {
   const bar = document.getElementById("loadingBar");
   bar.classList.remove("hidden");
   bar.style.width = "10%";
 
-  // Llamar a GitHub Actions
   await fetch("https://api.github.com/repos/winuker/dashboard-run/actions/workflows/refresh.yml/dispatches", {
     method: "POST",
     headers: {
@@ -206,10 +191,14 @@ document.getElementById("refreshBtn").addEventListener("click", async () => {
       "Authorization": "Bearer TU_TOKEN_PERSONAL",
       "X-GitHub-Api-Version": "2022-11-28"
     },
-    body: JSON.stringify({ ref: "main" })
+    body: JSON.stringify({
+      ref: "main",
+      inputs: {
+        send_whatsapp: sendWhatsapp ? "true" : "false"
+      }
+    })
   });
 
-  // Animación de progreso
   let progress = 10;
   const interval = setInterval(() => {
     progress += 5;
@@ -225,4 +214,4 @@ document.getElementById("refreshBtn").addEventListener("click", async () => {
       location.reload();
     }, 800);
   }, 45000);
-});
+}
