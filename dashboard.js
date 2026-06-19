@@ -174,4 +174,40 @@ function predictHalfMarathon(activities) {
 }
 
 loadData();
+document.getElementById("refreshBtn").addEventListener("click", async () => {
+  const bar = document.getElementById("loadingBar");
+  bar.classList.remove("hidden");
+  bar.style.width = "10%";
+
+  // Llamar a GitHub Actions
+  await fetch("https://api.github.com/repos/winuker/dashboard-run/actions/workflows/refresh.yml/dispatches", {
+    method: "POST",
+    headers: {
+      "Accept": "application/vnd.github+json",
+      "Authorization": "Bearer TU_TOKEN_PERSONAL",
+      "X-GitHub-Api-Version": "2022-11-28"
+    },
+    body: JSON.stringify({
+      ref: "main"
+    })
+  });
+
+  // Animación de progreso falsa mientras GitHub Actions trabaja
+  let progress = 10;
+  const interval = setInterval(() => {
+    progress += 5;
+    bar.style.width = progress + "%";
+    if (progress >= 95) clearInterval(interval);
+  }, 500);
+
+  // Esperar 30–60s a que GitHub Actions termine
+  setTimeout(() => {
+    bar.style.width = "100%";
+    setTimeout(() => {
+      bar.classList.add("hidden");
+      bar.style.width = "0%";
+      location.reload();
+    }, 800);
+  }, 45000);
+});
 
