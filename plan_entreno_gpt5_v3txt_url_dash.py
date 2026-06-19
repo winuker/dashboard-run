@@ -317,17 +317,7 @@ def main():
     with open("dashboard_data.json", "w", encoding="utf-8") as f:
         json.dump(dashboard_data, f, ensure_ascii=False, indent=2)
 
-    # ======================================
-    # SUBIR A GITHUB
-    # ======================================
-
-    upload_to_github(
-        filepath="dashboard_data.json",
-        repo=os.environ["REPO_NAME"],
-        branch=os.environ["REPO_BRANCH"],
-        token=os.environ["GH_TOKEN"]
-
-    )
+    
 
     # ======================================
     # ENVIAR WHATSAPP
