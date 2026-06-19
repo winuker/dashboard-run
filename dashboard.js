@@ -13,6 +13,8 @@ async function loadData() {
   const card = document.getElementById("whatsapp-status-card");
   const title = document.getElementById("whatsapp-title");
   const message = document.getElementById("whatsapp-message");
+  const counter = document.getElementById("whatsapp-counter");
+
 
   if (data.whatsapp_status === "sent") {
       card.classList.add("success", "visible");
