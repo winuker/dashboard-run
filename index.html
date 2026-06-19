@@ -23,7 +23,7 @@
 
   <main>
 
-    <!-- ANÁLISIS IA -->
+    <!-- ANÁLISIS IA PRIMERO -->
     <section class="analysis card">
       <h2>🤖 Análisis IA</h2>
       <pre id="aiText"></pre>
@@ -31,6 +31,12 @@
 
     <!-- TARJETAS DE MÉTRICAS -->
     <section id="metrics" class="card-grid"></section>
+
+    <!-- PREDICCIÓN MEDIA MARATÓN -->
+    <section class="card prediction-card">
+      <h2>⏱️ Predicción Media Maratón</h2>
+      <p id="predictionText">Cargando...</p>
+    </section>
 
     <!-- GRÁFICOS -->
     <section class="charts">
@@ -48,12 +54,6 @@
         <h2>🔥 Carga ATL / CTL / TSB</h2>
         <canvas id="loadChart"></canvas>
       </div>
-
-      <div class="card" id="predictionCard">
-        <h3>⏱️ Predicción Media Maratón</h3>
-        <p id="predictionText">Cargando...</p>
-      </div>
-      
     </section>
 
     <!-- MAPA -->
@@ -61,8 +61,6 @@
       <h2>🗺️ Mapa de rutas</h2>
       <div id="map"></div>
     </section>
-
-    
 
   </main>
 
