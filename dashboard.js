@@ -6,7 +6,9 @@ function formatPace(pace) {
 }
 
 async function loadData() {
-  const res = await fetch("dashboard_data.json");
+  const res = await fetch("dashboard_data.json?ts=" + Date.now());
+  const counterRes = await fetch("whatsapp_counter.json?ts=" + Date.now());
+  const counterData = await counterRes.json();
   const data = await res.json();
 
   // === TARJETA PRO DE WHATSAPP ===
@@ -36,7 +38,7 @@ async function loadData() {
     message.textContent = "Hubo un problema al enviar el mensaje.";
   }
 
-  counter.textContent = `Mensajes enviados hoy: ${data.whatsapp_count_today} / 50`;
+  counter.textContent = `Mensajes enviados hoy: ${counterData.count} / 50`;
   card.classList.remove("hidden");
 
   // === RESTO DEL DASHBOARD ===
