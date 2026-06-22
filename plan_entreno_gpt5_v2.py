@@ -273,11 +273,18 @@ def send_whatsapp(text):
         return "sent"
 
     except TwilioRestException as e:
+        # Log detallado del error de Twilio
+        write_log(f"TwilioRestException: {e}")
+        print("TwilioRestException:", e)
+
         if "429" in str(e):
             return "limit_reached"
         return "error"
 
-    except Exception:
+    except Exception as e:
+        # Log detallado de cualquier otro error
+        write_log(f"Exception en send_whatsapp: {e}")
+        print("Exception en send_whatsapp:", e)
         return "error"
 
 # ======================================
