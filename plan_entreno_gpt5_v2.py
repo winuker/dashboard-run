@@ -264,28 +264,28 @@ Justifica cada recomendación.
 def send_whatsapp(text):
     from twilio.base.exceptions import TwilioRestException
 
+    max_len = 1500
+    parts = [text[i:i+max_len] for i in range(0, len(text), max_len)]
+
     try:
-        twilio_client.messages.create(
-            from_=WHATSAPP_FROM,
-            body=text,
-            to=WHATSAPP_TO
-        )
+        for i, part in enumerate(parts, 1):
+            twilio_client.messages.create(
+                from_=WHATSAPP_FROM,
+                body=f"Parte {i}\n\n{part}",
+                to=WHATSAPP_TO
+            )
         return "sent"
 
     except TwilioRestException as e:
-        # Log detallado del error de Twilio
         write_log(f"TwilioRestException: {e}")
         print("TwilioRestException:", e)
-
-        if "429" in str(e):
-            return "limit_reached"
         return "error"
 
     except Exception as e:
-        # Log detallado de cualquier otro error
         write_log(f"Exception en send_whatsapp: {e}")
         print("Exception en send_whatsapp:", e)
         return "error"
+
 
 # ======================================
 # MAIN
