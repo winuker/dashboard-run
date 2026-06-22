@@ -74,10 +74,10 @@ Objetivo:
 - Sub 2 horas
 
 Peso actual: 90 kg
-Peso objetivo: 82 kg
+Peso objetivo: 79 kg
 
 Días de entrenamiento:
-Lunes, Miércoles, Viernes, Domingo
+Lunes, Miércoles, Jueves, Sábado
 
 LTHR: 168 ppm
 
