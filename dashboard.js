@@ -194,7 +194,7 @@ async function triggerWorkflow(sendWhatsapp) {
   bar.style.width = "10%";
 
   // 🔥 LLAMADA AL WORKER (NO A GITHUB)
-  await fetch("https://TU_WORKER_URL/run", {
+  await fetch("https://strava.winuker.workers.dev", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
