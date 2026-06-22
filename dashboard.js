@@ -187,24 +187,20 @@ document.getElementById("refreshBtnWhatsapp").addEventListener("click", () => {
   triggerWorkflow(true);
 });
 
-// === FUNCIÓN GENERAL PARA LLAMAR AL WORKFLOW ===
+// === FUNCIÓN GENERAL PARA LLAMAR AL WORKER ===
 async function triggerWorkflow(sendWhatsapp) {
   const bar = document.getElementById("loadingBar");
   bar.classList.remove("hidden");
   bar.style.width = "10%";
 
-  await fetch("https://api.github.com/repos/winuker/dashboard-run/actions/workflows/refresh.yml/dispatches", {
+  // 🔥 LLAMADA AL WORKER (NO A GITHUB)
+  await fetch("https://TU_WORKER_URL/run", {
     method: "POST",
     headers: {
-      "Accept": "application/vnd.github+json",
-      "Authorization": "Bearer TU_TOKEN_PERSONAL",
-      "X-GitHub-Api-Version": "2022-11-28"
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      ref: "main",
-      inputs: {
-        send_whatsapp: sendWhatsapp ? "true" : "false"
-      }
+      send_whatsapp: sendWhatsapp
     })
   });
 
