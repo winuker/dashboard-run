@@ -1,6 +1,46 @@
 {
   "activities": [
     {
+      "date": "2026-07-02",
+      "type": "Run",
+      "distance_km": 7.24,
+      "duration_min": 47.7,
+      "pace_min_km": 6.59,
+      "avg_hr": 145.1,
+      "max_hr": 153.0,
+      "elevation": 27.0
+    },
+    {
+      "date": "2026-07-01",
+      "type": "Run",
+      "distance_km": 6.99,
+      "duration_min": 42.0,
+      "pace_min_km": 6.0,
+      "avg_hr": 156.6,
+      "max_hr": 182.0,
+      "elevation": 24.0
+    },
+    {
+      "date": "2026-06-29",
+      "type": "Run",
+      "distance_km": 8.71,
+      "duration_min": 60.1,
+      "pace_min_km": 6.9,
+      "avg_hr": 147.0,
+      "max_hr": 155.0,
+      "elevation": 0
+    },
+    {
+      "date": "2026-06-26",
+      "type": "Run",
+      "distance_km": 1.83,
+      "duration_min": 12.9,
+      "pace_min_km": 7.06,
+      "avg_hr": 137.2,
+      "max_hr": 156.0,
+      "elevation": 10.0
+    },
+    {
       "date": "2026-06-24",
       "type": "Run",
       "distance_km": 9.45,
@@ -129,69 +169,19 @@
       "avg_hr": 142.9,
       "max_hr": 153.0,
       "elevation": 11.0
-    },
-    {
-      "date": "2026-06-05",
-      "type": "Run",
-      "distance_km": 5.75,
-      "duration_min": 35.5,
-      "pace_min_km": 6.18,
-      "avg_hr": 146.4,
-      "max_hr": 157.0,
-      "elevation": 12.0
-    },
-    {
-      "date": "2026-06-04",
-      "type": "Run",
-      "distance_km": 2.35,
-      "duration_min": 15.9,
-      "pace_min_km": 6.79,
-      "avg_hr": 146.5,
-      "max_hr": 154.0,
-      "elevation": 1.0
-    },
-    {
-      "date": "2026-06-04",
-      "type": "Run",
-      "distance_km": 2.51,
-      "duration_min": 17.1,
-      "pace_min_km": 6.82,
-      "avg_hr": 145.0,
-      "max_hr": 154.0,
-      "elevation": 13.0
-    },
-    {
-      "date": "2026-06-03",
-      "type": "Run",
-      "distance_km": 7.13,
-      "duration_min": 46.1,
-      "pace_min_km": 6.46,
-      "avg_hr": 149.4,
-      "max_hr": 165.0,
-      "elevation": 25.0
-    },
-    {
-      "date": "2026-06-01",
-      "type": "Run",
-      "distance_km": 6.16,
-      "duration_min": 40.0,
-      "pace_min_km": 6.5,
-      "avg_hr": 145.1,
-      "max_hr": 151.0,
-      "elevation": 28.0
     }
   ],
   "summary": {
-    "km_total": 105.7,
-    "time_total_min": 675.5,
-    "elevation_total": 380.0,
-    "avg_hr_global": 148.9,
-    "ATL": 25.9,
-    "CTL": 30.3,
-    "TSB": 4.4
+    "km_total": 106.6,
+    "time_total_min": 683.6,
+    "elevation_total": 362.0,
+    "avg_hr_global": 149.0,
+    "ATL": 30.0,
+    "CTL": 32.5,
+    "TSB": 2.5
   },
-  "plan": "*Análisis running – objetivo MM Córdoba 29/11/2026 sub 2h*  \n*LTHR: 168 ppm | Peso: 90 kg | Objetivo: 79 kg*\n\n---\n\n*1) Estado actual*\n\n✅ *Carga actual controlada*  \n- Total registrado: *105,7 km / 675 min*  \n- Ritmo medio global aprox: *6:23/km*  \n- FC media global: *148,9 ppm* → Z2 alta / borde Z3  \n- *CTL 30,3* → base aeróbica baja-media, adecuada para seguir construyendo  \n- *ATL 25,9*  \n- *TSB +4,4* → estás fresco, no vienes pasado de fatiga\n\n📌 Lectura clave:  \nTienes buena continuidad, pero demasiados rodajes están saliendo en *Z3-Z4*. Para una media sub 2h necesitas que el ritmo objetivo sea “controlado”, no que te lleve cerca del umbral.\n\n---\n\n*2) Riesgo de sobrecarga / lesión*\n\n⚠️ *Riesgo actual: moderado*\n\nNo por fatiga sistémica —el TSB está positivo—, sino por estos factores:\n\n- Varios entrenos con FC media en *Z3-Z4*:  \n  - 24/06: 153,9 ppm  \n  - 20/06: 155 ppm  \n  - 14/06: 164,2 ppm  \n  - 06/06: 163,5 ppm  \n- Picos altos: *171-184 ppm*  \n- Peso actual: *90 kg*, mayor carga mecánica en tendón de Aquiles, sóleo, rodilla y cadera  \n- Semana con varios días consecutivos o muy próximos\n\n📌 Prioridad ahora: subir CTL sin subir demasiado ATL. Más Z1-Z2 real, menos “rodaje medio fuerte”.\n\n---\n\n*3) Ritmo realista para sub 2h*\n\nPara bajar de 2h necesitas correr la media a:\n\n👉 *5:40-5:41/km*\n\nAhora mismo ese ritmo no está consolidado como ritmo sostenible de media maratón.\n\nDato importante:  \nHiciste *9,75 km a 5:34/km*, pero con *164 ppm de media*, es decir *Z4*. Eso es demasiado alto para sostenerlo 21,1 km en noviembre salvo mejora aeróbica clara.\n\n📌 Objetivo fisiológico:  \nQue el ritmo *5:40/km* pase de costarte Z4 a costarte aproximadamente *Z3 alta / Z4 baja controlada*, sin irte pronto por encima de 160-162 ppm.\n\nRitmos prácticos ahora:\n\n- Rodajes fáciles: *6:35-7:00/km*, siempre guiado por Z1-Z2  \n- Rodaje aeróbico útil: *143-150 ppm*  \n- Tempo controlado actual: *151-158 ppm*  \n- Ritmo específico sub 2h en bloques: *5:45-5:55/km*, solo si la FC no se dispara\n\n---\n\n*4) Entreno de mañana*\n\nAsumo mañana = *jueves 25/06*, después del entreno del 24/06.\n\n✅ *Rodaje recuperación aeróbica*\n\n- 45-50 min total  \n- 10’ Z1: *<143 ppm*  \n- 30-35’ Z2 baja/media: *143-148 ppm*  \n- 5’ muy suave Z1\n\n📌 Ritmo orientativo: *6:40-7:00/km*  \nNo buscar ritmo. Buscar pulso estable.\n\n❌ No haría series mañana.  \nVienes de un entreno a *153,9 ppm de media*, que ya fue Z3. Meter intensidad al día siguiente elevaría riesgo tendinoso y ATL sin necesidad.\n\n---\n\n*5) Plan próximos 7 días – 4 sesiones*\n\n*Jueves*  \n🟢 45-50’ Z1-Z2  \n- FC objetivo: *140-148 ppm*  \n- Sin apretar  \n- Objetivo: recuperar y sumar base\n\n*Sábado*  \n🟢 Tirada larga controlada  \n- 70’ total  \n- FC: *143-150 ppm*  \n- Si vas muy bien: últimos 10’ máximo Z3 baja, *151-154 ppm*  \n- Distancia estimada: *10,5-11 km*\n\n📌 Justificación: subir resistencia sin convertir la tirada en competición.\n\n*Lunes*  \n🟢 Rodaje fácil + técnica  \n- 50’ Z2  \n- FC: *143-150 ppm*  \n- Al final: *6 x 20” progresivos* con 60-75” suave entre cada uno  \n- Progresivos rápidos pero sin sprintar\n\n📌 Justificación: mejorar economía de carrera sin generar mucha fatiga metabólica.\n\n*Miércoles*  \n🟠 Trabajo tempo controlado  \n- 15’ calentamiento Z1-Z2  \n- 3 x 8’ en Z3: *153-158 ppm*  \n- Recuperación: 3’ suave entre bloques  \n- 10’ enfriamiento\n\n📌 Ritmo orientativo de los bloques: *5:55-6:10/km*, ajustando por FC.  \nSi pasas de *162 ppm* antes del último bloque, bajas ritmo.\n\nVolumen semanal estimado: *33-36 km*.  \nCorrecto para mantener progresión sin salto brusco.\n\n---\n\n*6) Recuperación y peso*\n\n🎯 Peso objetivo: *90 → 79 kg*  \nTienes unos 5 meses. Ritmo razonable: *0,4-0,6 kg/semana*. Más rápido puede afectar recuperación y calidad de entreno.\n\nPrioridades:\n\n- Déficit moderado: *400-600 kcal/día*  \n- Proteína: *1,6-2,0 g/kg de peso objetivo* → aprox *125-160 g/día*  \n- Carbohidratos alrededor de entrenos clave: miércoles y sábado  \n- No hacer tiradas largas ni tempos con déficit agresivo  \n- Post entreno: *25-35 g proteína + carbohidrato* en las 2 h posteriores  \n- Sueño: *7,5-9 h*  \n- Hidratación alta, especialmente con calor: agua + sodio en sesiones largas\n\n📌 Recomendación clave:  \nPerder peso te ayudará mucho, pero el sub 2h vendrá de combinar *menos masa corporal + más Z2 real + tempo controlado*, no de correr todos los rodajes cerca de umbral.",
-  "generated_at": "2026-06-25T16:37:41.814349",
+  "plan": "📊 *1) Estado actual*\n\n- Volumen reciente: *106,6 km / 683’* acumulados.\n- Ritmo medio global aprox: *6:25/km*.\n- FC media global: *149 ppm* → parte alta de *Z2*.\n- *CTL 32,5 / ATL 30 / TSB +2,5*  \n  → estás relativamente fresco, sin fatiga acumulada importante.\n\nLectura clave:  \n✅ Tienes base aeróbica inicial decente.  \n⚠️ Pero muchas sesiones fáciles se están yendo a *Z3* o incluso *Z4*.  \nEjemplo:  \n- 01/07: 6,99 km a *6:00/km*, FC media *156,6* → Z3 alta.  \n- 14/06: 9,75 km a *5:34/km*, FC media *164* → Z4, esfuerzo alto.\n\nConclusión: ahora mismo no te falta “velocidad puntual”; te falta poder sostener ritmos cercanos a sub 2h con FC más baja.\n\n---\n\n⚠️ *2) Riesgo de sobrecarga / lesión*\n\nRiesgo actual: *moderado*.\n\nPor qué:\n- TSB +2,5 indica buena frescura, eso es positivo.\n- Pero vienes metiendo picos de FC muy altos: *182-184 ppm*, claramente Z5.\n- Peso actual 90 kg → mayor carga mecánica en gemelos, sóleos, rodilla y fascia plantar.\n- Tiradas largas todavía cortas para media maratón: bloque continuo máximo útil alrededor de *9-10 km*.\n\nPrioridad: subir volumen progresivo, no intensidad.\n\nRegla práctica:\n- 80% del tiempo en *Z1-Z2*.\n- Solo 1 sesión semanal de calidad.\n- Tirada larga creciendo poco a poco.\n\n---\n\n🎯 *3) Ritmo realista para sub 2h*\n\nPara bajar de 2h necesitas correr a:\n\n*5:41/km de media.*\n\nRecomendación táctica realista:\n- Ritmo objetivo de entrenamiento/race pace: *5:38-5:42/km*.\n- Pero hoy ese ritmo todavía no parece sostenible para 21 km porque ritmos de 5:34-6:00 ya te llevan a Z3-Z4.\n\nObjetivo fisiológico antes de noviembre:\n- Que *5:40-5:45/km* se pueda correr con FC controlada, idealmente en torno a *155-160 ppm* al inicio/medio de la carrera.\n- Si en carrera pasas de *164 ppm* antes del km 12-14, el sub 2h se complica.\n\n---\n\n🏃‍♂️ *4) Entreno de mañana — sábado 04/07*\n\n*Tirada aeróbica controlada*\n\n- Duración: *65-70 min*\n- Distancia estimada: *9,5-10,5 km*\n- FC objetivo: *Z2 baja-media: 143-150 ppm*\n- Límite máximo: *153 ppm*\n- Ritmo orientativo: *6:45-7:10/km*, pero manda la FC.\n\nIndicaciones:\n- Nada de progresivo.\n- Nada de apretar al final.\n- Si la FC sube por encima de 153, bajas ritmo aunque sea a 7:20/km.\n- Objetivo: construir motor, no demostrar forma.\n\nJustificación: ya hiciste una sesión exigente el 01/07 en Z3 alta. Mañana interesa sumar volumen sin elevar ATL de forma agresiva.\n\n---\n\n📅 *5) Plan próximos 7 días — 4 sesiones*\n\n*Sábado 04/07*  \nTirada fácil  \n- 65-70’  \n- Z2: 143-150 ppm  \n- 9,5-10,5 km aprox.\n\n*Lunes 06/07*  \nRodaje suave + técnica  \n- 45’ en Z1-Z2  \n- FC: 138-148 ppm  \n- 6,5-7 km aprox.  \n- Al final: 4 x 20” alegres, con recuperación completa caminando/trotando.  \nSolo si piernas bien.\n\n*Miércoles 08/07*  \nCalidad controlada — umbral bajo  \n- 15’ calentamiento Z1-Z2  \n- 3 x 8’ en Z3: 154-158 ppm  \n- Recuperación: 3’ suave entre bloques  \n- 10’ enfriamiento  \n- Total: 55-60’  \n- Ritmo esperado: aprox. *5:55-6:10/km*, pero manda la FC.\n\nNo pasar de 160-162 ppm. No es sesión de Z5.\n\n*Jueves 09/07*  \nRecuperación aeróbica  \n- 40-45’  \n- FC: 138-146 ppm  \n- 6-6,5 km aprox.  \n- Si notas gemelos/sóleo cargados: dejarlo en 35’.\n\nVolumen semanal estimado: *30-33 km*.  \nCorrecto para tu CTL actual sin provocar salto brusco de carga.\n\n---\n\n⚖️ *6) Recuperación y peso*\n\nObjetivo peso: *90 → 79 kg*.  \nTienes unas 21 semanas hasta la carrera. Ritmo recomendable: *0,4-0,6 kg/semana*.\n\nDéficit:\n- 400-500 kcal/día.\n- No más agresivo, porque con déficit alto sube riesgo de lesión y baja calidad de entreno.\n\nProteína:\n- *130-160 g/día*.\n- Prioridad para conservar masa muscular mientras bajas peso.\n\nCarbohidratos:\n- Más altos antes de calidad y tirada larga.\n- No hagas el miércoles de calidad con depósitos vacíos.\n\nRecuperación post entreno:\n- En los 60’ posteriores:  \n  *25-35 g proteína + hidratos*.\n- Tras tirada larga: añadir carbohidrato suficiente para no llegar vacío al lunes.\n\nHidratación:\n- En Córdoba/calor: *500-750 ml/h*.\n- Si sudas mucho: añadir sales, especialmente en tiradas >60’.\n\nFuerza recomendada:\n2 días/semana después de rodajes suaves:\n- Gemelo y sóleo.\n- Glúteo medio.\n- Isquios.\n- Core.\n- 2-3 series, sin llegar al fallo.\n\nMotivo: con 90 kg y aumento progresivo de km, sóleo/gemelo y rodilla serán los limitantes antes que el sistema cardiovascular.\n\nResumen claro:  \n✅ Vas bien de frescura.  \n✅ Sub 2h es posible con 21 semanas.  \n⚠️ Pero ahora toca correr más fácil, no más fuerte.  \n🎯 La clave será convertir el ritmo *5:40/km* en un ritmo controlado, no en un esfuerzo de Z4.",
+  "generated_at": "2026-07-03T17:07:30.558076",
   "whatsapp_status": "sent",
   "whatsapp_count_today": 1
 }
