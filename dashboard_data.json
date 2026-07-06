@@ -1,6 +1,16 @@
 {
   "activities": [
     {
+      "date": "2026-07-06",
+      "type": "Run",
+      "distance_km": 9.13,
+      "duration_min": 60.1,
+      "pace_min_km": 6.58,
+      "avg_hr": 145.9,
+      "max_hr": 154.0,
+      "elevation": 31.0
+    },
+    {
       "date": "2026-07-04",
       "type": "Run",
       "distance_km": 12.96,
@@ -159,29 +169,19 @@
       "avg_hr": 146.6,
       "max_hr": 152.0,
       "elevation": 20.0
-    },
-    {
-      "date": "2026-06-06",
-      "type": "Run",
-      "distance_km": 9.76,
-      "duration_min": 61.0,
-      "pace_min_km": 6.26,
-      "avg_hr": 163.5,
-      "max_hr": 184.0,
-      "elevation": 54.0
     }
   ],
   "summary": {
-    "km_total": 118.2,
-    "time_total_min": 757.6,
-    "elevation_total": 387.0,
-    "avg_hr_global": 149.6,
-    "ATL": 30.4,
-    "CTL": 36.4,
-    "TSB": 5.9
+    "km_total": 117.5,
+    "time_total_min": 756.7,
+    "elevation_total": 364.0,
+    "avg_hr_global": 148.6,
+    "ATL": 27.0,
+    "CTL": 35.6,
+    "TSB": 8.6
   },
-  "plan": "🏃‍♂️ *Análisis actual — Media Maratón Córdoba 29/11/2026 | Objetivo sub 2h*\n\n---\n\n## 1️⃣ Estado actual del atleta\n\n📊 *Carga actual*\n- CTL: *36.4* → base aeróbica moderada.\n- ATL: *30.4* → fatiga aguda controlada.\n- TSB: *+5.9* → estás relativamente fresco, no sobrecargado ahora mismo.\n\n📌 Lectura técnica:  \nTienes margen para entrenar calidad, pero la base aún no es suficientemente sólida para abusar de Z3/Z4.\n\n📈 Última semana registrada:\n- 35.9 km aprox.\n- Tirada larga: 12.96 km en 84’\n- FC media global: 149.6 ppm → parte alta de Z2 / entrada Z3.\n\n⚠️ Punto clave: corres muchos rodajes demasiado cerca de Z3. Para media maratón sub 2h necesitas más eficiencia en Z2, no solo “apretar más”.\n\n---\n\n## 2️⃣ Riesgo de sobrecarga o lesión\n\n🟠 *Riesgo actual: moderado*\n\nMotivos:\n- Peso actual: 90 kg → mayor carga mecánica por impacto.\n- Tirada larga de 12.96 km = mucho peso relativo dentro de la semana.\n- Varias sesiones con FC media en Z3/Z4.\n- Picos de FC de 176-184 ppm → por encima de LTHR, demasiada intensidad si no era trabajo específico.\n- Subida reciente de volumen hacia ~36 km/semana.\n\n✅ No hay señal de fatiga aguda alta por TSB, pero sí riesgo musculotendinoso si sigues metiendo intensidad frecuente.\n\n📌 Recomendación:\nDurante 2-3 semanas, consolidar 32-36 km/semana antes de subir más.\n\n---\n\n## 3️⃣ Ritmo realista para sub 2h\n\n🎯 Sub 2h exige:\n- *5:41/km* de media.\n- Ritmo objetivo con margen: *5:38-5:40/km*.\n\n📌 Con tus datos actuales:\n- Has corrido 9.75 km a ritmo fuerte con FC media 164 ppm, cerca de Z4.\n- Eso indica buena capacidad, pero todavía no es sostenible para 21 km.\n- Tu ritmo actual realista de media maratón estaría más cerca de *5:55-6:05/km* si tuvieras que competir ya.\n\n✅ Objetivo correcto:\nNo entrenar ahora muchos km a 5:41/km.  \nPrimero hacer que ritmos de 6:10-6:25/km bajen de FC hacia Z2/Z3 baja.\n\n📌 Señal de que el sub 2h está maduro:\nSer capaz de hacer 14-16 km a 5:50-5:55/km con FC controlada en 151-158 ppm.\n\n---\n\n## 4️⃣ Entreno de mañana\n\n📅 Mañana martes 07/07\n\n❌ No correr.\n\n✅ Hacer:\n- 35-45’ caminata suave o bici muy fácil.\n- FC <143 ppm.\n- 10-15’ movilidad: cadera, sóleo, gemelo, glúteo medio.\n- Opcional: foam roller suave.\n\n📌 Justificación:\nVienes de una semana cercana a 36 km y el martes no está dentro de tus días de running. Meter carrera mañana aumentaría carga sin necesidad y empeoraría la calidad del miércoles.\n\n---\n\n## 5️⃣ Plan próximos 7 días — 4 sesiones\n\n### Lunes\n🏃‍♂️ *Rodaje aeróbico + técnica*  \n- 45’ en Z2: 143-150 ppm.\n- Al final: 6 x 20’’ progresivos.\n- Recuperación 80-100’’ caminando/trote.\n- Total aprox: 6.5-7.5 km.\n\n📌 Objetivo: mejorar economía sin fatigar. Los progresivos no son sprints.\n\n---\n\n### Miércoles\n🏃‍♂️ *Trabajo controlado de umbral bajo*  \n- 15’ Z1-Z2.\n- 3 x 8’ en Z3: 151-158 ppm.\n- Recuperar 3’ suave entre bloques.\n- 10’ enfriar.\n\nTotal: 55-60’.\n\n📌 Clave: no pasar de 158 ppm. Si sube más, bajas ritmo. Buscamos eficiencia, no sufrimiento.\n\n---\n\n### Jueves\n🏃‍♂️ *Rodaje regenerativo*  \n- 40-45’ muy cómodo.\n- FC objetivo: 143-148 ppm.\n- Sin cambios de ritmo.\n\n📌 Justificación: vienes del trabajo del miércoles. Este día debe sumar volumen sin añadir fatiga.\n\n---\n\n### Sábado\n🏃‍♂️ *Tirada larga controlada*  \n- 80-85’ en Z2.\n- FC: 143-150 ppm.\n- No perseguir ritmo.\n- Si a partir del min 60 la FC deriva >5-7 ppm al mismo ritmo, aflojar.\n\nDistancia estimada: 12-13.5 km.\n\n📌 Objetivo: construir resistencia específica sin convertir la tirada en tempo.\n\n---\n\n📊 Volumen semanal objetivo: *33-35 km*  \nCorrecto para consolidar sin aumentar riesgo.\n\n---\n\n## 6️⃣ Recuperación y peso\n\n🎯 Peso:\n- Actual: 90 kg.\n- Objetivo: 79 kg.\n- Diferencia: 11 kg.\n- Tiempo hasta carrera: ~21 semanas.\n- Ritmo necesario: ~0.5 kg/semana.\n\n✅ Es viable, pero no conviene perder más rápido porque afectaría recuperación y calidad.\n\n📌 Estrategia:\n- Déficit medio: 400-600 kcal/día.\n- Proteína: 1.6-2.0 g/kg/día → aprox. 145-180 g/día.\n- Carbohidratos altos en días de calidad y tirada larga.\n- No hacer los entrenos intensos bajo de glucógeno.\n\n🍌 Antes de calidad:\n- 30-60 g de carbohidrato.\n\n🥤 Tiradas >75’:\n- 30-45 g carbohidrato/hora.\n- 500-750 ml líquido/hora si hace calor.\n- Sodio si sudas mucho.\n\n💤 Recuperación:\n- Dormir 7.5-9 h.\n- 2 sesiones cortas de fuerza/semana tras lunes y jueves:\n  - gemelo/sóleo\n  - glúteo medio\n  - peso muerto rumano\n  - zancadas\n  - core anti-rotación\n\n📌 Prioridad absoluta:\nBajar peso sin perder músculo y sin convertir todos los rodajes en Z3. Ahí está la diferencia entre llegar fino al sub 2h o llegar fatigado.",
-  "generated_at": "2026-07-06T04:13:40.957125",
-  "whatsapp_status": "sent",
+  "plan": "📌 *Análisis actual — objetivo Media Maratón Córdoba 29/11/2026 sub 2h*\n\n## 1️⃣ Estado actual del atleta\n\n✅ *Base aeróbica en construcción, bastante estable.*\n\nDatos clave:\n- 117,5 km acumulados\n- Ritmo medio global aprox: *6:26/km*\n- FC media global: *148,6 ppm* → Z2 alta\n- CTL: *35,6*\n- ATL: *27,0*\n- TSB: *+8,6* → llegas fresco, no sobrecargado ahora mismo\n\nLectura:\n- Tienes buena regularidad.\n- Ya toleras tiradas de 80’+.\n- Pero muchas sesiones fáciles se están yendo a *Z2 alta / Z3*.\n- Para sub 2h no falta velocidad pura, falta que el ritmo objetivo sea sostenible con menos pulso.\n\nDato importante:\n- El 14/06 hiciste 9,75 km a *5:34/km* con FC media *164 ppm*.\n- Eso demuestra que tienes ritmo, pero 164 ppm es Z4.\n- Para una media maratón sub 2h, el ritmo de *5:41/km* debería caer más cerca de *Z3 alta / Z4 baja*, no en Z4 sostenida desde pronto.\n\n---\n\n## 2️⃣ Riesgo de sobrecarga o lesión\n\n📊 *Riesgo actual: bajo-moderado.*\n\nPor carga:\n- ATL 27 < CTL 35,6\n- TSB +8,6 → no hay fatiga aguda acumulada\n\nPero hay 3 riesgos claros:\n\n1️⃣ *Demasiado tiempo en Z3/Z4*\n- 04/07: 12,96 km a 6:29/km con 153 ppm → Z3\n- 01/07: 6,99 km a 6:00/km con 156 ppm → Z3 alta\n- 24/06: 9,45 km a 6:10/km con 153,9 ppm → Z3\n\nEsto no es malo puntualmente, pero si se repite, genera fatiga sin dar tanta mejora aeróbica como Z2 real.\n\n2️⃣ *Peso actual 90 kg*\n- Mayor carga mecánica en sóleo, gemelo, rodilla y cadera.\n- El riesgo aumenta especialmente con ritmos cercanos a 6:00/km o más rápidos.\n\n3️⃣ *Picos de FC altos*\n- Máximas de 182, 176, 174 ppm.\n- Con LTHR 168, esos picos son Z5.\n- Pueden ser artefactos, cuestas o acelerones, pero conviene evitarlos en rodajes.\n\n👉 Prioridad: más control de intensidad, no más dureza.\n\n---\n\n## 3️⃣ Ritmo realista para sub 2h\n\n🎯 Ritmo objetivo sub 2h: *5:41/km*\n\nAhora mismo:\n- Puedes tocar ritmos de 5:35-5:45/km.\n- Pero todavía no parece sostenible durante 21 km con deriva cardíaca controlada.\n\n📌 Ritmo realista actual de media maratón estimado por tus datos: *5:55-6:05/km*.\n\nPara lograr sub 2h:\n- El ritmo 5:41/km debe sentirse controlado.\n- FC esperada en carrera:\n  - Km 1-5: 150-156 ppm\n  - Km 6-16: 156-162 ppm\n  - Km 17-21: 162-166 ppm\n- Si vas a 164 ppm demasiado pronto, el sub 2h se complica.\n\nEstrategia de carrera futura:\n- Km 1-5: *5:45-5:48/km*\n- Km 6-16: *5:39-5:42/km*\n- Km 17-21: progresar si la FC no se dispara\n\n---\n\n## 4️⃣ Entreno de mañana\n\nMañana martes 07/07: *NO correr.*\n\nJustificación:\n- Entrenaste lunes 06/07: 60’ a 145,9 ppm, Z2 correcta.\n- Tus días de entrenamiento son lunes, miércoles, jueves y sábado.\n- Meter carrera mañana rompería la estructura y aumentaría fatiga antes del bloque miércoles-jueves.\n\n✅ Mañana:\n- 30-40’ caminata suave\n- Movilidad tobillo/cadera 10’\n- Gemelo + sóleo + glúteo medio: 2-3 series suaves\n- Nada intenso\n\nObjetivo: llegar fresco al miércoles.\n\n---\n\n## 5️⃣ Plan próximos 7 días\n\n### Miércoles — Calidad aeróbica controlada\n🏃‍♂️ 55-60’\n\n- 15’ Z1-Z2  \n  FC <150 ppm\n- 3 x 8’ en Z3  \n  FC 151-158 ppm  \n  Recuperación: 3’ suave entre bloques\n- 10’ enfriar\n\n📌 No pasar de 160 ppm.\n\nObjetivo: mejorar ritmo sostenible sin entrar en fatiga de umbral.\n\n---\n\n### Jueves — Rodaje fácil + técnica\n🏃‍♂️ 45-50’\n\n- Todo en Z1-Z2\n- FC objetivo: 143-148 ppm\n- Al final: 6 x 20’’ progresivos  \n  Recuperando 60-90’’ muy suave\n\n📌 Los progresivos no son sprints.\n\nObjetivo: volumen aeróbico + economía de carrera.\n\n---\n\n### Sábado — Tirada larga\n🏃‍♂️ 85-90’\n\n- Primeros 70’: Z2 estricta  \n  FC 143-150 ppm\n- Últimos 15-20’: solo si vas cómodo, subir a Z3 baja  \n  FC 151-155 ppm\n\n📌 Si antes del minuto 60 ya estás en 153-155 ppm, no progreses.\n\nObjetivo: aumentar resistencia específica sin convertir la tirada en carrera.\n\n---\n\n### Lunes — Rodaje aeróbico\n🏃‍♂️ 55-60’\n\n- Z2 baja-media\n- FC objetivo: 143-148 ppm\n- Ritmo libre, manda la FC\n\n📌 Si piernas cargadas del sábado: 45-50’ en Z1-Z2.\n\nObjetivo: consolidar carga sin acumular fatiga.\n\n---\n\n📊 Volumen semanal estimado: *37-40 km aprox.*\n\nCorrecto para tu CTL actual. No subiría más todavía.\n\n---\n\n## 6️⃣ Recuperación y peso\n\n### Recuperación\n\nPrioridades:\n- Dormir 7,5-9 h\n- 24-48 h entre sesiones exigentes\n- Jueves fácil de verdad\n- Sábado controlado por FC, no por ritmo\n\nDespués de entrenar:\n- 20-30 g proteína\n- Carbohidrato si la sesión supera 60’\n- Hidratación con sales si hace calor\n\n📌 Con Córdoba en verano, la FC puede subir por temperatura. En esos días, manda el pulso, no el ritmo.\n\n---\n\n### Peso\n\nObjetivo: 90 kg → 79 kg  \nPérdida necesaria: 11 kg\n\nHasta el 29/11 hay tiempo suficiente.\n\nRitmo ideal:\n- *0,4-0,6 kg/semana*\n- No más de 0,7 kg/semana para no comprometer entrenamiento\n\nRecomendación:\n- Déficit diario moderado: 300-500 kcal\n- Proteína: 1,6-2,0 g/kg de peso objetivo  \n  ≈ 125-160 g/día\n- Carbohidratos alrededor de entrenamientos\n- No hacer sesiones de calidad en ayunas\n\n📌 Bajar peso te dará mejora directa: menos coste energético, menor impacto y mejor relación ritmo/FC.\n\n---\n\n✅ Conclusión clara:\n\nVas bien, sin sobrecarga actual.  \nEl objetivo sub 2h es realista, pero ahora la prioridad no es correr más rápido, sino hacer que 5:41/km cueste menos pulso.  \nMás Z2 real, una calidad controlada por semana y tiradas largas sin pasar a Z3 demasiado pronto.",
+  "generated_at": "2026-07-06T15:08:46.103023",
+  "whatsapp_status": "disabled",
   "whatsapp_count_today": 1
 }
